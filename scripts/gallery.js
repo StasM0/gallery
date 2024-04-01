@@ -52,7 +52,6 @@ function submit(btn) {
   if (form.checkValidity()) {
     btn.disabled = true;
     let xhttp = new XMLHttpRequest();
-    //xhttp.onload = function () {};
     let fileInput = document.getElementById("file");
     let file = fileInput.files[0];
     var formData = new FormData();
@@ -63,18 +62,15 @@ function submit(btn) {
 
     xhttp.send(formData);
     xhttp.onload = function () {
-      console.log("Sent"); // Handle response from the server if needed
+      console.log("Sent");
       if (this.responseText == "The file has been uploaded.") {
-        //document.getElementById("wrapper").innerHTML += this.responseText;
         setTimeout(function () {
           form.submit();
         }, 500);
-        //window.location.href = "http://localhost/VSC/gallery/index.php";
-        // Submit the form after XMLHttpRequest is done
       } else {
         document.getElementById("wrapper").innerHTML += this.responseText;
         const timeOut = setTimeout(function () {
-          window.location.href = "http://localhost/VSC/gallery/index.php";
+          window.location.href = "http://localhost/gallery/index.php";
         }, 3000);
       }
     };

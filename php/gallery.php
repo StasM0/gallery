@@ -8,7 +8,7 @@ function insertStuff($pdo, &$warning)
         $warning .= $pdo->error;
         return $warning;
     } else {
-        header("Location:http://localhost/VSC/gallery/index.php");
+        header("Location:http://localhost/gallery/index.php");
     }
 }
 $pdo = new PDOStuff('gallery');
