@@ -1,0 +1,176 @@
+div#photos {
+  height: fit-content;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+div.photo {
+  width: 22vmax;
+  height: fit-content;
+  border-radius: 15px;
+  position: relative;
+}
+img.gallery {
+  width: 22vw;
+  height: calc(22vw * 5 / 4);
+  border-radius: 15px;
+  object-fit: cover;
+}
+div.overlay {
+  display: none;
+  background-color: rgba(57, 57, 57, 0.6);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  align-items: center;
+  justify-content: center;
+  border: 2px var(--red) solid;
+}
+.big {
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  z-index: 5;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  align-items: center;
+  grid-template-columns: 51vw 49vw;
+  background-color: rgba(57, 57, 57, 0.7);
+  backdrop-filter: blur(3px);
+  transition: 1s;
+
+  overflow: hidden;
+}
+
+.bigImg {
+  max-width: 50vw;
+  max-height: 99vh;
+  object-fit: contain;
+  transition: 1s;
+  position: relative;
+
+  justify-self: center;
+}
+.big > button {
+  z-index: 10;
+  align-self: flex-start;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 50px;
+  height: 50px;
+  background-color: rgba(57, 57, 57, 0);
+  border: none;
+  outline: none;
+  transition: 1s;
+  grid-column: 2;
+}
+#inCross {
+  max-width: 50px;
+}
+p.name {
+  font-size: 3vmin;
+  text-align: center;
+}
+.photoInfo {
+  height: 99vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+  grid-column: 2;
+  max-width: 45vw;
+}
+.dbInfo {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+.photoTitle {
+  position: absolute;
+  top: 1px;
+  width: fit-content;
+  font-size: 4vmin;
+  font-weight: 800;
+}
+.photoDescr::before {
+  display: block;
+  content: "Description";
+  margin-bottom: 5px;
+  font-size: larger;
+  font-weight: 700;
+}
+.photoTags,
+.photoLocation {
+  /* position: absolute; */
+  width: 45vw;
+}
+
+.photoDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-self: flex-start;
+  width: 40vw;
+  float: left;
+}
+.grid {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 3px;
+  grid-template-columns: 2.5vmin auto;
+}
+.grid > :nth-child(2) {
+  font-weight: 700;
+  grid-column: 2;
+}
+.grid > :last-child {
+  grid-column: 2;
+}
+.grid > img,
+.photoSettings > img {
+  height: 2.5vmin;
+  margin-right: 5px;
+  grid-column: 1;
+}
+
+.photoSettings {
+  display: grid;
+  grid-template-columns: calc(2.5vmin + 5px) repeat(3, min-content);
+}
+.photoSettings > div {
+  margin-right: 15px;
+}
+.photoSettings > div:last-child {
+  margin: 0;
+}
+.photoExposure::before {
+  content: "Exposure";
+  display: block;
+  font-weight: 700;
+}
+.photoShutter::before {
+  content: "Shutter";
+  display: block;
+  font-weight: 700;
+}
+.photoISO::before {
+  content: "ISO";
+  display: block;
+  font-weight: 700;
+}
+#bigImgDiv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  scroll-snap-align: start;
+  grid-column: 1;
+}

@@ -1,0 +1,100 @@
+#formDiv {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 6;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(57, 57, 57, 0.7);
+  backdrop-filter: blur(20px);
+  top: 0;
+}
+#wrapper {
+  width: fit-content;
+  border: 2px solid var(--red);
+  border-radius: 10px;
+  display: grid;
+  justify-self: center;
+  grid-template-rows: 5fr repeat(2, 1fr);
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  gap: 10px;
+  background-color: transparent;
+  backdrop-filter: blur(20px);
+}
+#inputs {
+  display: grid;
+  grid-template-rows: 1fr 2fr repeat(2, 1fr);
+  grid-auto-columns: minmax(25vmax 60vmax);
+  row-gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+div#inputs > div[id$="Div"] > input[type="text"],
+div#inputs > div[id$="Div"] > textarea {
+  background-color: inherit;
+  border: none;
+  border-bottom: 1px solid white;
+  resize: none;
+  border-radius: initial;
+}
+div#inputs > div[id$="Div"] {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  max-width: 55vmax;
+  min-width: 25vmax;
+}
+div#inputs > div#descrDiv {
+  grid-template-rows: 1fr 2fr;
+}
+div#inputs > div > label {
+  grid-row: 1;
+}
+#btns {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+#btns > button,
+input[type="file"]::-webkit-file-upload-button {
+  background-color: inherit;
+  border: 1px solid var(--red);
+  border-radius: 10px;
+  padding: 2px 7px;
+  transition: 1s;
+  transition-delay: 0.025s;
+  min-width: 60px;
+  min-height: 30px;
+}
+#btns > button:hover,
+input[type="file"]::-webkit-file-upload-button:hover {
+  background-color: var(--red);
+  color: #202040;
+}
+input[type="file"]::-webkit-file-upload-button {
+  color: white;
+}
+input[type="file"] {
+  display: block;
+  height: min-content;
+  grid-row: 5;
+}
+#tags::placeholder {
+  font-size: smaller;
+}
+#preview {
+  --value: 37vmax;
+  height: 85vh;
+  width: var(--value);
+  height: calc(var(--value) * 5 / 4);
+  grid-column: 2;
+  grid-row: 1;
+  justify-self: center;
+  border: 2px solid var(--red);
+  border-radius: 10px;
+  object-fit: cover;
+}
