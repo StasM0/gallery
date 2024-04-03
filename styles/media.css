@@ -84,7 +84,7 @@
     width: 98vw;
     max-height: 100vh;
     height: 100vh;
-    height: -webkit-fill-available;
+    /* height: -webkit-fill-available; */
   }
   .big > button {
     grid-column: 1;
